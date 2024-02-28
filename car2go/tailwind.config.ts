@@ -22,6 +22,9 @@ const config: Config = {
       textColor: {
         primary: '#971F20'
       },
+      scale: {
+        '102': '1.01'
+      }
     },
   },
   plugins: [],

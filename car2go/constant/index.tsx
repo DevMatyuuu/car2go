@@ -50,3 +50,26 @@ export const services = [
     description: 'At our car rental service, reliability is our cornerstone. We understand that a smooth and hassle-free experience is essential for our customers.'
   },
 ]
+
+export const stats = [
+  {
+    id: 1,
+    label: 'Speed',
+    value: 60
+  },
+  {
+    id: 2,
+    label: 'Gas Consumption',
+    value: 40
+  },
+  {
+    id: 3,
+    label: 'Control',
+    value: 70
+  },
+  {
+    id: 4,
+    label: 'Heavyness',
+    value: 30
+  },
+]
