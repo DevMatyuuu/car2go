@@ -24,7 +24,7 @@ const config: Config = {
       },
       scale: {
         '102': '1.01'
-      }
+      },
     },
   },
   plugins: [],

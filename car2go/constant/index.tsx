@@ -17,8 +17,8 @@ export const navLinks = [
   },
   {
     id: 3,
-    label: 'Vehicles',
-    route: '/vehicles'
+    label: 'Brands',
+    route: '/brands'
   },
   {
     id: 4,

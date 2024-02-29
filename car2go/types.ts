@@ -4,6 +4,7 @@ type Vehicles = {
   description?: string,
   title?: string,
   category?: string,
+  header?: string,
 }
 
 type Categories = {

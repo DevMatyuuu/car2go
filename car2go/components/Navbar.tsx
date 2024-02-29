@@ -12,15 +12,15 @@ export default function Navbar() {
         <div className='flex items-center xl:gap-32 lg:gap-16'>
           <div className='lg:flex hidden xl:gap-16 lg:gap-8'>
             {navLinks.map((link) => (
-              <div key={link.id}>
+              <div key={link.id} className='hover:text-primary'>
                 <Link href={link.route}>{link.label}</Link>
               </div>
             ))}
           </div>
           <div className='flex xl:gap-8 lg:gap-6 gap-5 items-center'>
-            <Link href={'/login'} className='underline underline-offset-3'>Login</Link>
+            <Link href={'/login'} className='underline underline-offset-3 hover:text-primary'>Login</Link>
             <Link href={'/register'}>
-              <button className='lg:px-8 lg:py-3 px-4 py-2 bg-primary lg:text-base text-xs text-white lg:rounded-xl rounded-lg'>Register</button>
+              <button className='lg:px-8 lg:py-3 px-4 py-2 bg-primary hover:bg-red-700 lg:text-base text-xs text-white lg:rounded-xl rounded-lg'>Register</button>
             </Link>
           </div>
         </div>

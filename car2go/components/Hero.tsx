@@ -12,7 +12,7 @@ export default function Hero() {
             <p className='xl:text-[70px] text-[40px] lg:leading-[85px] xl:mb-16 mb-10'>
               Drive into your next <span className='text-primary'>adventure</span> with us. Your journey, our super wheels.
             </p>
-            <button className='md:hidden lg:block mx-auto lg:mx-0 bg-primary text-white lg:w-[30%] w-[70%] h-14 rounded-xl'>Rent now</button>
+            <button className='md:hidden lg:block mx-auto lg:mx-0 bg-primary hover:bg-red-700 text-white lg:w-[30%] w-[70%] h-14 rounded-xl'>Rent now</button>
           </div>
           <div className='hidden md:block lg:block md:w-full lg:w-auto'>
             <Image src={heroImg} alt='hero-img' className='md:mx-auto lg:mx-0 md:h-80 md:w-96 md:mb-5 lg:h-auto lg:w-auto'/>
