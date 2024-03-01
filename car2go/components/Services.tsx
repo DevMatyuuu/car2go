@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Services() {
   return (
-    <div className='flex flex-col bg-primary text-white xl:h-auto h-auto xl:px-48 px-8 py-20 xl:py-20'>
+    <div className='flex flex-col bg-primary text-white xl:h-auto h-auto xl:px-48 px-8 py-20 xl:py-20 xl:pb-28'>
       <div className='flex flex-col justify-center items-center lg:py-10 mb-10'>
         <span className='text-[#FFA800]'>Our Main</span>
         <span className='lg:text-5xl text-3xl'>Services</span>

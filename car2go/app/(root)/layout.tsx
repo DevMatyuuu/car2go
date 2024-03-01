@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} lg:py-5`}>
+      <body className={`${poppins.className}`}>
         <Navbar />
         {children}
         <Footer />

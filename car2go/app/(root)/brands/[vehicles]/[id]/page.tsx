@@ -9,7 +9,7 @@ interface Props {
   };
 }
 
-export default function carDetails({ params }: Props) {
+export default function CarDetails({ params }: Props) {
   const { vehicles } = useVehicles();
 
   const paramsId = params.id;

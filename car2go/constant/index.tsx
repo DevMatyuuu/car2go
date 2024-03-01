@@ -73,3 +73,38 @@ export const stats = [
     value: 30
   },
 ]
+
+export const footerLinks = [
+  {
+    id: 1,
+    label: 'pricing'
+  },
+  {
+    id: 2,
+    label: 'FAQs'
+  },
+  {
+    id: 3,
+    label: 'What’s new'
+  },
+  {
+    id: 4,
+    label: 'About'
+  },
+  {
+    id: 5,
+    label: 'Help Center'
+  },
+  {
+    id: 6,
+    label: 'Terms and Privacy'
+  },
+  {
+    id: 7,
+    label: 'Blog'
+  },
+  {
+    id: 8,
+    label: 'Partnerships'
+  },
+]

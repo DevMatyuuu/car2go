@@ -1,3 +1,4 @@
+import AppAdvetisement from '@/components/AppAdvetisement'
 import BrandCarousel from '@/components/BrandCarousel'
 import CarPreview from '@/components/CarPreview'
 import Hero from '@/components/Hero'
@@ -7,11 +8,12 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Hero />
       <Services />
       <CarPreview />
       <BrandCarousel />
+      <AppAdvetisement />
     </div>
   )
 }

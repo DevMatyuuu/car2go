@@ -12,3 +12,13 @@ type Categories = {
   id?: string;
   image?:string,
 }
+
+type CarPreview = {
+  gasConsumption?: string;
+  speed?: string;
+  control?: string,
+  weight?: string,
+  id?: string,
+  label?: string,
+  image?: string,
+}
