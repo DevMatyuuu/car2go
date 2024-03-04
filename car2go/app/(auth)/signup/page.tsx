@@ -67,7 +67,7 @@ export default function SignUp() {
   return (
       <div className='flex justify-center items-center h-screen bg-primary xl:bg-white'>
         <div className='flex h-[600px] xl:h-[650px] lg:h-[500px] md:h-[500px] shadow-2xl rounded-xl bg-white'>
-          <form onSubmit={handleSubmit} className='flex flex-col justify-center w-[400px] xl:w-[550px] md:w-[350px] items-center py-12 rounded-xl md:rounded-r-none'>
+          <form onSubmit={handleSubmit} className='flex flex-col justify-center w-[430px] xl:w-[550px] md:w-[350px] items-center py-12 rounded-xl md:rounded-r-none'>
             <Image src={logo} alt='devoro-logo' className='xl:h-24 xl:w-28 h-16 w-20 mb-10' priority/>
             <div className='flex items-center flex-col gap-5 w-full'>
               <div className='flex relative  w-full'>
