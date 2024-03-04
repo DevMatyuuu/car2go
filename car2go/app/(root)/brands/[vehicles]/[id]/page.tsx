@@ -17,7 +17,7 @@ export default function CarDetails({ params }: Props) {
   const selectedVehicleDetails = vehicles.find(vehicle => vehicle.id === paramsId)
   console.log(paramsId)
   return (
-    <div className='flex justify-center xl:py-0 xl:px-0'>
+    <div className='flex justify-center xl:py-0 xl:px-0 h-screen xl:pt-28'>
       {selectedVehicleDetails ? 
       <div className='flex flex-col'>
         <div key={selectedVehicleDetails.id}>

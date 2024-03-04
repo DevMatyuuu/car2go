@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <div className='flex justify-center items-center h-screen'>
+      Contact
+    </div>
   )
 }

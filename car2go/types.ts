@@ -22,3 +22,14 @@ type CarPreview = {
   label?: string,
   image?: string,
 }
+
+interface SignupValues {
+  email: string;
+  password: string;
+  cpassword: string;
+}
+
+interface user {
+  uid?: string,
+  email?: string | null,
+}

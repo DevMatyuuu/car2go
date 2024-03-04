@@ -27,10 +27,8 @@ export default function Vehicles({ params }: Props) {
 
   const selectedVehicles = vehicles.filter(vehicle => vehicle.category === paramsId)
 
-  console.log(paramsId)
-
   return (
-    <div className='flex flex-col gap-16 px-48 py-20 h-auto'>
+    <div className='flex flex-col gap-16 px-48 py-20 h-screen xl:pt-60'>
         <Link className='flex items-center' href={'/brands'}>
           <MdOutlineKeyboardArrowLeft className='size-10 text-primary'/>
           <button className='text-lg'>Back</button>
