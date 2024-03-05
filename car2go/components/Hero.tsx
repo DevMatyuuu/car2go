@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <div className='flex md:flex-col lg:flex-row md:items-center xl:items-start lg:justify-between lg:px-48 lg:py-32 lg:pb-60 md:px-16 py-20 xl:pt-60 px-8 h-auto'>
+    <div className='flex md:flex-col lg:flex-row md:items-center xl:items-start lg:justify-between lg:px-48 lg:py-32 lg:pb-60 md:px-16 py-20 xl:pt-60 pt-32 px-8 h-auto'>
           <div className='flex flex-col lg:justify-start text-center lg:text-start lg:w-[50%]'>
             <span className='text-[#FFA800] ml-1'>
               Plan your trip now
