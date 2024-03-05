@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB-KeriNvSJgMKDYtmyN-1ywFCQngecOdg",
-  authDomain: "car2go-f1956.firebaseapp.com",
-  projectId: "car2go-f1956",
-  storageBucket: "car2go-f1956.appspot.com",
-  messagingSenderId: "1029962330361",
-  appId: "1:1029962330361:web:d8d3c44e4a3d871d5e3228"
+  apiKey: process.env.NEXT_API_KEY,
+  authDomain: process.env.NEXT_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PROJECT_ID,
+  storageBucket: process.env.NEXT_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_APP_ID
 };
 
 

@@ -144,7 +144,7 @@ export default function Login() {
                   </form>
                   <div className='flex justify-center flex-col items-center text-center gap-5 w-full mx-auto'>
                       <div className='flex items-center text-sm justify-center gap-1.5'>
-                          <span>Don't have an account yet?</span>
+                          <span>Dont have an account yet?</span>
                           <Link href={'/signup'} className='text-primary underline hover:font-normal'>Register Now!</Link>
                       </div>  
                   </div>
