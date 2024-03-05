@@ -25,12 +25,11 @@ import { useRouter } from 'next/navigation'
 import { signOut } from 'firebase/auth'
 import { auth } from '@/firebase/firebase'
 import { Divide, Divide as Hamburger } from 'hamburger-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IoLogOutOutline } from "react-icons/io5";
 
 
 export default function Navbar() {
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const { user } = useUserDetails();
@@ -44,11 +43,12 @@ export default function Navbar() {
     })
     .catch((error) => {
     });
-}
+  }
+
 
   return (
     <div className='fixed w-full z-50'>
-      <div className='flex bg-white top-0 xl:px-48 xl:py-6 lg:px-28 md:px-20 px-8 py-4 items-center justify-between'>
+      <div className='text-black flex top-0 xl:px-48 xl:py-6 lg:px-28 md:px-20 px-8 py-4 items-center justify-between'>
         <Image src={logo} alt='Logo' className='lg:h-16 lg:w-20 h-12 w-14' priority/>
         <div className='hidden lg:flex items-center xl:gap-32 lg:gap-16'>
           <div className='lg:flex hidden xl:gap-16 lg:gap-8'>

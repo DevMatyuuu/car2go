@@ -26,7 +26,7 @@ export default function CarPreview() {
             <div className='flex flex-col justify-center xl:w-[40%] w-[87%] border-2 border-[#971F20] rounded-lg'>
             <div className='flex relative justify-center items-center gap-1 bg-primary py-4 text-white '>
               <select onChange={handleSelectedChange} value={selectedOption} className='py-2 w-auto px-4 text-start bg-primary text-lg border border-white  rounded-xl' >
-                  <option value='Select a car' selected>Select a car</option>
+                  <option value='Select a car' defaultValue={'Select a car'}>Select a car</option>
                   <option value='Nissan 370z'>Nissan 370z</option>
                   <option value='Porsche Lycan'>Porsche Lycan</option>
                   <option value='Nissan 370z'>Nissan 370z</option>

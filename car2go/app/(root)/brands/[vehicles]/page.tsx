@@ -46,7 +46,3 @@ export default function Vehicles({ params }: Props) {
     </div>
   )
 }
-
-
-
-

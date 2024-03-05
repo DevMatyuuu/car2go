@@ -1,3 +1,4 @@
+
 type Vehicles = {
   id?: string,
   image?: string,
@@ -5,6 +6,7 @@ type Vehicles = {
   title?: string,
   category?: string,
   header?: string,
+  detailsImage?: string
 }
 
 type Categories = {
