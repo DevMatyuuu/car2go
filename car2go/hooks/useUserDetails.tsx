@@ -5,12 +5,15 @@ import { useEffect, useState } from "react";
 
 export default function useUserDetails() {
   const [user, setUser] = useState<user | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         const { email, uid} = user;
+        setLoading(true)
         setUser({ email, uid});
+        setLoading(false);
       } else {
         setUser(null);
       }
@@ -22,6 +25,6 @@ export default function useUserDetails() {
 
   
 
-  return { user };
+  return { user, loading };
 
 }

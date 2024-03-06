@@ -15,7 +15,7 @@ export default function CarPreview() {
   const { CarPreview } = useCarPreview();
 
   const selectedCarPreview = CarPreview.find(car => car.id === selectedOption)
-  console.log(selectedCarPreview)
+
   return (
     <div className='xl:px-48 xl:py-20 py-20 xl:mb-10'>
       <div className='flex flex-col justify-center items-center lg:py-10 mb-10'>

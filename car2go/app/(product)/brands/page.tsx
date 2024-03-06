@@ -1,4 +1,6 @@
 import Brands from '@/components/Brands'
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { Metadata } from 'next';
 import React from 'react'
 
@@ -7,9 +9,11 @@ export const metadata: Metadata = {
   description: "Offering top notch brands for you",
 };
 
-export default function vehicles() {
+export default function vehiclesCollection() {
   return (
-    <div className='px-48 py-20 xl:h-screen xl:pt-60'>
+    <>
+    <Navbar />
+    <div className='px-48 py-20 xl:h-screen xl:pt-48'>
       <div className='flex flex-col gap-16 justify-center items-center'>
         <div>
           <h1 className='text-5xl text-primary'>Brands</h1>
@@ -17,5 +21,6 @@ export default function vehicles() {
         <Brands />
       </div>
     </div>
+    </>
   )
 }

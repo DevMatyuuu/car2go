@@ -25,14 +25,15 @@ import { useRouter } from 'next/navigation'
 import { signOut } from 'firebase/auth'
 import { auth } from '@/firebase/firebase'
 import { Divide, Divide as Hamburger } from 'hamburger-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IoLogOutOutline } from "react-icons/io5";
 
 
-export default function Navbar() {
+export default function CarDetailsNavbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScroll, setIsScroll] = useState<string | null | boolean>(false);
 
-  const { user, loading } = useUserDetails();
+  const { user } = useUserDetails();
 
   const router = useRouter();
 
@@ -45,15 +46,27 @@ export default function Navbar() {
     });
   }
 
+  useEffect(() => {
+    window.addEventListener("scroll", checkClassNav);
+  }, []);
+
+  const checkClassNav = () => {
+    if (window.scrollY >= 80) {
+      setIsScroll("");
+    } else {
+      setIsScroll(null);
+    }
+  };
+
 
   return (
     <div className='fixed w-full z-50'>
-      <div className='text-black bg-white flex top-0 xl:px-48 xl:py-6 lg:px-28 md:px-20 px-8 py-4 items-center justify-between'>
+      <div className={`${window.scrollY >= 80 ? 'text-black bg-white' : 'text-white bg-transparent'} flex top-0 xl:px-48 xl:py-6 lg:px-28 md:px-20 px-8 py-4 items-center justify-between`}>
         <Image src={logo} alt='Logo' className='lg:h-16 lg:w-20 h-12 w-14' priority/>
         <div className='hidden lg:flex items-center xl:gap-32 lg:gap-16'>
           <div className='lg:flex hidden xl:gap-16 lg:gap-8'>
             {navLinks.map((link) => (
-              <div key={link.id} className='hover:text-primary'>
+              <div key={link.id} className='hover:text-red-700'>
                 <Link href={link.route}>{link.label}</Link>
               </div>
             ))}
@@ -63,7 +76,7 @@ export default function Navbar() {
           <div className='flex xl:gap-8 lg:gap-6 gap-5 items-center'>
             <DropdownMenu>
               <DropdownMenuTrigger className='flex gap-1 items-center'>
-                <span className='text-primary'>{user.email}</span>
+                <span className={`${window.scrollY >= 80 ? 'text-primary' : 'text-white'} hover:text-red-700`}>{user.email}</span>
                 <MdKeyboardArrowDown />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -94,8 +107,8 @@ export default function Navbar() {
             </DropdownMenu>
           </div>
           :
-          <div className={`${user ? 'hidden' : 'flex'} xl:gap-8 lg:gap-6 gap-5 items-center`}>
-            <Link href={'/login'} className='underline underline-offset-3 hover:text-primary'>Login</Link>
+          <div className='flex xl:gap-8 lg:gap-6 gap-5 items-center'>
+            <Link href={'/login'} className='underline underline-offset-3 hover:text-red-700'>Login</Link>
             <Link href={'/signup'}>
               <button className='lg:px-8 lg:py-3 px-4 py-2 bg-primary hover:bg-red-700 lg:text-base text-xs text-white lg:rounded-xl rounded-lg'>Register</button>
             </Link>

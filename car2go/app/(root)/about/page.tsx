@@ -14,7 +14,7 @@ const poppins = Poppins({
 
 export default function About() {
   return (
-    <div className='flex flex-col items-center pt-60 mb-60 h-screen px-48 gap-20'>
+    <div className='flex flex-col items-center pt-48 mb-60 h-screen px-48 gap-20'>
       <div className='flex flex-col gap-5'>
         <h1 className='text-6xl text-center mb-12 text-primary'>About Us: Car2Go Philippines</h1>
         <p className={poppins.className}>Welcome to Car2Go Philippines, where luxury meets convenience on the open road. Our passion for exceptional automobiles drives us to provide an unparalleled car rental experience for discerning enthusiasts. Buckle up as we take you on a thrilling ride through our story.</p>

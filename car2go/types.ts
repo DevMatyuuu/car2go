@@ -7,6 +7,7 @@ type Vehicles = {
   category?: string,
   header?: string,
   detailsImage?: string
+  diffDuration?: string
 }
 
 type Categories = {

@@ -5,6 +5,7 @@ import React from 'react'
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
+import Navbar from '@/components/Navbar';
 
 
 
@@ -28,6 +29,8 @@ export default function Vehicles({ params }: Props) {
   const selectedVehicles = vehicles.filter(vehicle => vehicle.category === paramsId)
 
   return (
+    <>
+    <Navbar />
     <div className='flex flex-col gap-16 px-48 py-20 h-screen xl:pt-56'>
         <Link className='flex items-center' href={'/brands'}>
           <MdOutlineKeyboardArrowLeft className='size-10 text-primary'/>
@@ -44,5 +47,6 @@ export default function Vehicles({ params }: Props) {
           )}
         </div>
     </div>
+    </>
   )
 }
