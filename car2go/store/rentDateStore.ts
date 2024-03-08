@@ -22,7 +22,6 @@ const useRentDateStore = create<RentDateState>()(
     }),
     {
       name: 'rentDate',
-      partialize: (state) => ({ dateDifference: state.dateDifference })
     }
   )
 )

@@ -1,6 +1,8 @@
 import { FaCar } from "react-icons/fa";
 import { PiLightningFill } from "react-icons/pi";
 import { FaThumbsUp } from "react-icons/fa";
+import gcash from '@/assets/gcash-logo.webp'
+import maya from '@/assets/maya-logo.webp'
 
 
 
@@ -106,5 +108,18 @@ export const footerLinks = [
   {
     id: 8,
     label: 'Partnerships'
+  },
+]
+
+export const paymentModes = [
+  {
+    id: 1,
+    image: gcash,
+    label: 'Gcash'
+  },
+  {
+    id: 2,
+    image: maya,
+    label: 'Maya'
   },
 ]

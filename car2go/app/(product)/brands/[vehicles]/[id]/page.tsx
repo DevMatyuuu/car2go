@@ -26,7 +26,7 @@ interface Props {
 }
 
 export default function CarDetails({ params }: Props) {
-  const [dateDifference, setDateDifference, pickupDate, setPickupDate, returnDate, setReturnDate] = useRentDateStore((state) => [state.dateDifference, state.setDateDifference, state.pickupDate, state.setPickupDate, state.returnDate, state.setReturnDate]);
+  const [setDateDifference, pickupDate, setPickupDate, returnDate, setReturnDate] = useRentDateStore((state) => [state.setDateDifference, state.pickupDate, state.setPickupDate, state.returnDate, state.setReturnDate]);
 
   const { vehicles } = useVehicles();
   const { user } = useUserDetails();
@@ -46,8 +46,6 @@ export default function CarDetails({ params }: Props) {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     setDateDifference(diffDays);
   }, [pickupDate, returnDate])
-
-  console.log(dateDifference)
 
   return (
     <>

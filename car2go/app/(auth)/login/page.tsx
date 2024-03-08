@@ -99,8 +99,8 @@ export default function Login() {
                                       <TooltipTrigger>
                                         <RiErrorWarningFill size={24} className='text-red-800'/>
                                       </TooltipTrigger>
-                                      <TooltipContent side='left'>
-                                        <p className='text-white xl:text-base text-[14px]'>{invalid}</p>
+                                      <TooltipContent>
+                                        <p className='text-white xl:text-sm text-[14px]'>{invalid}</p>
                                       </TooltipContent>      
                                     </Tooltip>
                                   </TooltipProvider>
@@ -130,8 +130,8 @@ export default function Login() {
                                       <TooltipTrigger>
                                         <RiErrorWarningFill size={24} className='text-red-800'/>
                                       </TooltipTrigger>
-                                      <TooltipContent side='left'>
-                                        <p className='text-white xl:text-base text-[14px]'>{invalid}</p>
+                                      <TooltipContent>
+                                        <p className='text-white xl:text-sm text-[14px]'>{invalid}</p>
                                       </TooltipContent>      
                                     </Tooltip>
                                   </TooltipProvider>

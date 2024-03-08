@@ -32,7 +32,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const { user, loading } = useUserDetails();
+  const { user } = useUserDetails();
 
   const router = useRouter();
 
