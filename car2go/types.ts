@@ -26,6 +26,17 @@ type CarPreview = {
   image?: string,
 }
 
+type history = {
+  id?: string;
+  image? : string;
+  timestamp?: string;
+  title?: string;
+  pickUp?: string; 
+  return?: string; 
+  Price?: string;
+  uid?: string; 
+}
+
 interface SignupValues {
   email: string;
   password: string;

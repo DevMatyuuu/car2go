@@ -45,6 +45,10 @@ export default function Navbar() {
     });
   }
 
+  const handleHistory = (id: string | undefined) => {
+    router.push(`/history/${id}`)
+  }
+
 
   return (
     <div className='fixed w-full z-50'>
@@ -68,7 +72,7 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem className='cursor-pointer hover:bg-gray-100'> My Profile</DropdownMenuItem>
-                <DropdownMenuItem className='cursor-pointer hover:bg-gray-100'> History</DropdownMenuItem>
+                <DropdownMenuItem className='cursor-pointer hover:bg-gray-100' onClick={() => handleHistory(user.uid)}>History</DropdownMenuItem>
                 <DropdownMenuSeparator />
                   <Dialog>
                     <DialogTrigger className='w-full text-start px-2.5 py-2 text-sm hover:bg-gray-100'>Log out</DialogTrigger>

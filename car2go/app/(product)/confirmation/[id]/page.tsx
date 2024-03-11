@@ -49,7 +49,10 @@ export default function Confirmation({ params }: Props) {
       id: randomId, 
       title: selectedVehicleConfirmation?.title,
       timestamp: serverTimestamp(),
-      image: selectedVehicleConfirmation?.image
+      image: selectedVehicleConfirmation?.image,
+      pickUp: format(pickupDate as any, "PPP"),
+      return: format(returnDate as any, "PPP"),
+      Price: totalPrice,
     }); 
   };
 

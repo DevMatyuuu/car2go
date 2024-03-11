@@ -9,6 +9,8 @@ export const vehicleCollection = collection(db, "vehicles");
 
 export const carPreviewCollection = collection(db, "car-preview");
 
+export const historyCollection = collection(db, "history");
+
 
 
 
