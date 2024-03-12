@@ -111,18 +111,18 @@ export default function Navbar() {
         </div>
       </div>
       <div className={`${!isOpen ? '-right-[1000px]' : 'right-0' } flex-col xl:flex-row lg:hidden h-screen duration-500 ease-in-out py-24 absolute flex items-center w-full bg-white`}>
-        <div className='flex h-[45vh] lg:hidden flex-col items-center justify-center xl:gap-16 lg:gap-8 w-full gap-14 px-8'>
+        <div className='flex h-[45vh] lg:hidden flex-col items-center justify-center xl:gap-16 lg:gap-8 w-full gap-10 px-8'>
           {navLinks.map((link) => (
-            <div key={link.id} className='hover:text-primary text-3xl'>
-              <Link href={link.route}>{link.label}</Link>
+            <div key={link.id} className='hover:text-primary text-2xl'>
+              <Link href={link.route} onClick={() => setIsOpen(false)}>{link.label}</Link>
             </div>
           ))}
-          <Link href={'/'} className='hover:text-primary text-3xl'>History</Link>
-          <Link href={'/'} className='hover:text-primary text-3xl'>My Account</Link>
+          <Link href={'/'} className='hover:text-primary text-2xl'>History</Link>
+          <Link href={'/'} className='hover:text-primary text-2xl'>My Account</Link>
         </div>
         {user 
           ? 
-          <div className='flex flex-col gap-3 justify-center items-center px-8 w-full mt-56'>
+          <div className='flex flex-col gap-3 justify-center items-center px-8 w-full mt-28'>
             <div>
               <span className='text-xl text-primary'>{user.email}</span>
             </div>

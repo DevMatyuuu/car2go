@@ -14,8 +14,8 @@ const poppins = Poppins({
 
 export default function Footer() {
   return (
-    <div className={`${poppins.className} flex flex-col relative w-full xl:h-[38vh] h-[35vh] bg-primary xl:px-48 px-8 pt-10 xl:pt-16 text-white`}>
-      <div className='flex xl:flex-row flex-col gap-10 xl:gap-0 justify-between items-center'>
+    <div className={`${poppins.className} flex flex-col relative w-full xl:h-[38vh] h-[35vh] bg-primary xl:px-48 px-8 pt-16 xl:pt-16 text-white`}>
+      <div className='flex xl:flex-row flex-col gap-20 xl:gap-0 justify-between items-center'>
         <div className='grid xl:grid-cols-3 grid-cols-3 xl:gap-5 gap-2 xl:w-[60%] xl:h-[40%]'>
           {footerLinks.map((link) => (
             <div className='cursor-pointer' key={link.id}>

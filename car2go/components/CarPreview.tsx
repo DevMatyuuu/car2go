@@ -3,6 +3,7 @@
 import ProgressBar from '@ramonak/react-progress-bar'
 import React, { useState } from 'react'
 import useCarPreview from '@/hooks/useCarPreview'
+import carPlaceholder from '@/assets/select-car-placeholder.webp'
 import Image from 'next/image'
 
 export default function CarPreview() {
@@ -56,8 +57,12 @@ export default function CarPreview() {
           </div>
           <div className='flex justify-center xl:w-[60%]'>
             <div className='text-center xl:mt-28 xl:py-0 py-10'>
-              <span className='text-2xl'>{selectedCarPreview ? selectedCarPreview?.label : 'Select a car'}</span>
-              <img src={selectedCarPreview?.image} className='xl:h-80 h-56' alt={selectedCarPreview?.label} loading='lazy'/>
+              <span className='flex justify-center xl:text-2xl text-xl xl:mb-0 mb-8'>{selectedCarPreview ? selectedCarPreview?.label : 'Select a car'}</span>
+              {selectedCarPreview ? 
+              <img src={selectedCarPreview?.image} className='xl:h-80 xl:w-auto w-72' alt={selectedCarPreview?.label} loading='lazy'/> 
+              : 
+              <Image src={carPlaceholder} className='xl:h-80 xl:w-auto w-72' alt='placeholder' loading='lazy'/>
+              }
             </div>
           </div>
         </div>
