@@ -85,7 +85,7 @@ export default function CarDetails({ params }: Props) {
                   <PopoverContent className="w-auto p-0" align="start">
                     <Calendar
                       mode="single"
-                      selected={pickupDate}
+                      selected={pickupDate as any}
                       onSelect={setPickupDate}
                       initialFocus
                     />
@@ -115,7 +115,7 @@ export default function CarDetails({ params }: Props) {
                 </Popover>
               </div>
               <div>
-                <button onClick={() => confirmation(selectedVehicleDetails.id)} className={`${pickupDate == undefined ? 'cursor-not-allowed' : ''} text-white bg-primary px-6 py-3 rounded-lg text-whit`} disabled={pickupDate == undefined}>
+                <button onClick={() => confirmation(selectedVehicleDetails.id)} className={`${pickupDate === '' ? 'cursor-not-allowed' : 'hover:bg-red-700'} text-white bg-primary px-6 py-3 rounded-lg text-whit`} disabled={pickupDate == undefined}>
                   Rent this car
                 </button>
               </div>

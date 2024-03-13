@@ -8,6 +8,8 @@ type Vehicles = {
   header?: string,
   detailsImage?: string
   diffDuration?: string
+  pickUp?: string; 
+  return?: string;
 }
 
 type Categories = {

@@ -20,7 +20,7 @@ export default function Footer() {
           {footerLinks.map((link) => (
             <div className='cursor-pointer' key={link.id}>
               <h6 className='xl:text-lg text-sm'>
-                {link.label}
+                <span className='hover:text-[#FFA800]'>{link.label}</span>
               </h6>
             </div>
           ))}

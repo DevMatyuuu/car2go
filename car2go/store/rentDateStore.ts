@@ -4,10 +4,10 @@ import { persist } from 'zustand/middleware';
 interface RentDateState {
   dateDifference: number | undefined,
   setDateDifference: (value: number | undefined) => void,
-  pickupDate: Date | undefined,
-  setPickupDate: (value: Date | undefined) => void,
-  returnDate: Date | undefined,
-  setReturnDate: (value: Date | undefined) => void,
+  pickupDate: Date | undefined | string,
+  setPickupDate: (value: Date | undefined | string) => void,
+  returnDate: Date | undefined | string,
+  setReturnDate: (value: Date | undefined | string) => void,
 }
 
 const useRentDateStore = create<RentDateState>()(

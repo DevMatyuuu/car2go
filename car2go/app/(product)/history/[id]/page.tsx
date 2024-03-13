@@ -7,7 +7,6 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -32,7 +31,7 @@ export default function History({params} : Props) {
   return (
     <>
     <Navbar />
-    <div className='flex flex-col pt-48 h-screen px-48 gap-12'>
+    <div className='flex flex-col py-48 h-auto px-48 gap-12'>
       <div className='text-5xl text-primary'>
         History
       </div>
@@ -61,12 +60,6 @@ export default function History({params} : Props) {
               </TableRow>
             ))}
           </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={4}>Total</TableCell>
-              <TableCell className="text-right">$2,500.00</TableCell>
-            </TableRow>
-          </TableFooter>
         </Table>
       </div>
     </div>

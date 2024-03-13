@@ -126,7 +126,7 @@ export default function CarDetailsNavbar() {
               <Link href={link.route}>{link.label}</Link>
             </div>
           ))}
-          <Link href={'/'} className='hover:text-primary text-3xl'>History</Link>
+          <Link href={`/history/${user?.uid}`} className='hover:text-primary text-3xl'>History</Link>
           <Link href={'/'} className='hover:text-primary text-3xl'>My Account</Link>
         </div>
         {user 

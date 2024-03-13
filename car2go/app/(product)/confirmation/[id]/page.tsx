@@ -10,9 +10,11 @@ import React, { useId, useState } from 'react'
 import { format } from "date-fns"
 import { paymentModes } from '@/constant';
 import Image from 'next/image';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from '@/components/ui/dialog';
 import Lottie from 'lottie-react'
 import thanksAnimation from '@/assets/thanks-animation.json'
+import Link from 'next/link';
+import useHistory from '@/hooks/useHistory';
 
 interface Props {
   params: {
@@ -22,7 +24,7 @@ interface Props {
 
 
 export default function Confirmation({ params }: Props) {
-  const [dateDifference, pickupDate, returnDate] = useRentDateStore((state) => [state.dateDifference, state.pickupDate, state.returnDate]);
+  const [dateDifference, pickupDate, returnDate, setPickupDate, setReturnDate] = useRentDateStore((state) => [state.dateDifference, state.pickupDate, state.returnDate, state.setPickupDate, state.setReturnDate]);
   const [activePayment, setActivePayment] = useState<null | number>(null);
 
   const { user } = useUserDetails();
@@ -42,18 +44,34 @@ export default function Confirmation({ params }: Props) {
   const percentage = rentPrice * .05;
   const totalPrice = rentPrice - percentage ;
 
+  const Pickup = new Date();
+  const Return = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+  const formattedPickupDate = new Intl.DateTimeFormat('en-US', options as any).format(Pickup);
+  const formattedReturnDate = new Intl.DateTimeFormat('en-US', options as any).format(Return);
+
   const rentCar = async () => {
-    const docRef = await addDoc(collection(db, 'history'), {
-      email: user?.email,
-      uid: user?.uid,
-      id: randomId, 
-      title: selectedVehicleConfirmation?.title,
-      timestamp: serverTimestamp(),
-      image: selectedVehicleConfirmation?.image,
-      pickUp: format(pickupDate as any, "PPP"),
-      return: format(returnDate as any, "PPP"),
-      Price: totalPrice,
-    }); 
+    try {
+      const docRef = await addDoc(collection(db, 'history'), {
+        email: user?.email,
+        uid: user?.uid,
+        id: randomId, 
+        title: selectedVehicleConfirmation?.title,
+        timestamp: serverTimestamp(),
+        image: selectedVehicleConfirmation?.image,
+        pickUp: format(pickupDate as any, "PPP"),
+        return: format(returnDate as any, "PPP"),
+        Price: totalPrice,
+      }); 
+      setActivePayment(null)
+      setPickupDate('')
+      setReturnDate('')
+    }
+    catch (error) {
+      console.log('error:', error)
+    }
+    
   };
 
   return (
@@ -75,8 +93,8 @@ export default function Confirmation({ params }: Props) {
             <div className='flex flex-col justify-start gap-7 w-[50%] px-10 bg-slate-200 py-10 rounded-lg'>
               <span>Details:</span>
               <span>Car model: {selectedVehicleConfirmation?.title}</span>
-              <span>Pick-up Date: {format(pickupDate as any, "PPP")}</span>
-              <span>Return Date: {format(returnDate as any, "PPP")}</span>
+              <span>Pick-up Date: {formattedPickupDate} </span>
+              <span>Return Date: {formattedReturnDate} </span>
               <span>Location: 184 Tumbang Preso bldg, Mandaluyong City</span>
             </div>
             <div className='flex flex-col gap-5 w-[50%] py-10 justify-center px-10 bg-slate-200 rounded-lg'>
@@ -100,7 +118,7 @@ export default function Confirmation({ params }: Props) {
           ))}
         </div>
         <div className='flex justify-center items-center gap-7 mt-32 text-base'>
-          <button className='underline text-primary underline-offset-2 hover:text-red-700'>Cancel</button>
+          <Link href={`/brands/${selectedVehicleConfirmation?.category}/${selectedVehicleConfirmation?.id}`} className='underline text-primary underline-offset-2 hover:text-red-700'>Cancel</Link>
           <div>
             <Dialog>
               <DialogTrigger onClick={rentCar} disabled={activePayment === null} className={`${activePayment === null ? 'cursor-not-allowed' : 'cursor-pointer hover:bg-red-700'} w-full text-start px-8 py-3 text-sm bg-primary rounded-lg text-white`}>Confirm</DialogTrigger>
@@ -111,7 +129,7 @@ export default function Confirmation({ params }: Props) {
                     <Lottie animationData={thanksAnimation} loop={false}/>
                   </div>
                   <div className='w-full text-center'>
-                    <span>You may now check your history to see your transactions</span>
+                    <span>You may now check your <Link href={`/history/${user.uid}`} className='underline underline-offset-2 text-primary'>history</Link> to see your transactions</span>
                   </div>
                 </DialogHeader>
               </DialogContent>

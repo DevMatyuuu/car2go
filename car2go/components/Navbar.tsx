@@ -117,7 +117,7 @@ export default function Navbar() {
               <Link href={link.route} onClick={() => setIsOpen(false)}>{link.label}</Link>
             </div>
           ))}
-          <Link href={'/'} className='hover:text-primary text-2xl'>History</Link>
+          <Link href={`/history/${user?.uid}`} className='hover:text-primary text-2xl'>History</Link>
           <Link href={'/'} className='hover:text-primary text-2xl'>My Account</Link>
         </div>
         {user 
