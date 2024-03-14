@@ -54,21 +54,21 @@ export default function CarDetails({ params }: Props) {
       {selectedVehicleDetails ? 
       <div className='flex flex-col'>
         <div key={selectedVehicleDetails.id}>
-          <img src={selectedVehicleDetails.header} alt={selectedVehicleDetails.title} className='w-[200vw] h-[100vh]'/>
+          <img src={selectedVehicleDetails.header} alt={selectedVehicleDetails.title} className='w-[200vw] xl:h-[100vh] h-[30vh]'/>
         </div>
         <div className={user ? 'flex xl:py-40' : 'flex xl:py-40 items-center'}>
           <div className=''>
-            <img src={selectedVehicleDetails.detailsImage} className='xl:h-[600px] xl:w-[2800px] xl:rounded-r-full'/>
+            <img src={selectedVehicleDetails.detailsImage} className='xl:block hidden xl:h-[600px] xl:w-[2800px] xl:rounded-r-full'/>
           </div>
-          <div className='flex flex-col gap-7 w-full text-start xl:pr-48 xl:pl-28'>
-            <span className='text-primary text-7xl'>{selectedVehicleDetails.title}</span>
-            <div>
+          <div className='flex flex-col gap-7 w-full text-start xl:pr-48 xl:pl-28 py-20 xl:py-0'>
+            <span className='text-primary xl:text-7xl text-3xl text-center xl:text-start px-8 xl:px-0'>{selectedVehicleDetails.title}</span>
+            <div className='px-8 xl:px-0 text-sm xl:text-base'>
               <p>{selectedVehicleDetails.description}</p>
             </div>
             {user 
             ? 
-            <div className='flex flex-col gap-5 xl:mt-7'>
-              <div className='flex gap-5'>
+            <div className='flex flex-col gap-7 xl:mt-7'>
+              <div className='flex flex-col xl:flex-row justify-center items-center gap-5'>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
@@ -114,8 +114,8 @@ export default function CarDetails({ params }: Props) {
                   </PopoverContent>
                 </Popover>
               </div>
-              <div>
-                <button onClick={() => confirmation(selectedVehicleDetails.id)} className={`${pickupDate === '' ? 'cursor-not-allowed' : 'hover:bg-red-700'} text-white bg-primary px-6 py-3 rounded-lg text-whit`} disabled={pickupDate == undefined}>
+              <div className='mx-auto'>
+                <button onClick={() => confirmation(selectedVehicleDetails.id)} className={`${pickupDate === '' ? 'cursor-not-allowed' : 'hover:bg-red-700'} text-white bg-primary px-6 py-3 rounded-lg`} disabled={pickupDate == undefined}>
                   Rent this car
                 </button>
               </div>
